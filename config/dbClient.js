@@ -1,3 +1,4 @@
+import "dotenv/config";
 import { MongoClient } from "mongodb";
 
 class dbClient {
@@ -11,7 +12,7 @@ class dbClient {
     async conectarBD(){
        try{
            await this.client.connect();
-           this.db = this.client.db;
+           this.db = this.client.db("adopcion");
            console.log("Conectado a la BD");
        }catch(e){
            console.log(e);
