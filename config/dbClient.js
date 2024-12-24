@@ -20,4 +20,4 @@ class dbClient {
     }
 }
 
-export default dbClient;
+export default new dbClient();
