@@ -4,8 +4,13 @@ class mascotasModel{
 
     async create(mascota){
         const colectionMascotas = dbClient.db.collection("mascotas");
-        await colectionMascotas.insertOne(mascota);
+        return await colectionMascotas.insertOne(mascota);
 
+    }
+
+    async getAllMascotas(){
+        const colectionMascotas = dbClient.db.collection("mascotas");
+        return await colectionMascotas.find({}).toArray();
     }
 }
 

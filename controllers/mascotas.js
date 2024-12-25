@@ -6,9 +6,9 @@ class mascotasController{
     }
 
     async createMascota(req, res){
-        const data = mascotasModel.create(req.body);
+        const data = await mascotasModel.create(req.body);
         try{
-            res.status(200).json(data);
+            res.status(201).json(data);
         }catch(e){
            res.status(500).send(e);
         }
@@ -16,7 +16,8 @@ class mascotasController{
 
     async getAllMascotas(req, res){
         try{
-            res.status(200).json({status: "ok"});
+            const data = await mascotasModel.getAllMascotas();
+            res.status(201).json(data);
         }catch(e){
            res.status(500).send(e);
         }
@@ -24,7 +25,7 @@ class mascotasController{
 
     async getOneMascota(req, res){
         try{
-            res.status(200).json({status: "getOne-ok"});
+            res.status(201).json({status: "getOne-ok"});
         }catch(e){
            res.status(500).send(e);
         }
@@ -32,7 +33,7 @@ class mascotasController{
     
     async updateMascota(req, res){
         try{
-            res.status(200).json({status: "update-ok"});
+            res.status(201).json({status: "update-ok"});
         }catch(e){
            res.status(500).send(e);
         }
@@ -40,7 +41,7 @@ class mascotasController{
 
     async deleteMascota(req, res){
         try{
-            res.status(200).json({status: "delete-ok"});
+            res.status(201).json({status: "delete-ok"});
         }catch(e){
            res.status(500).send(e);
         }
