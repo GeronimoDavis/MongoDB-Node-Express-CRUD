@@ -7,3 +7,5 @@ const usuariosSchema = new mongoose.Schema({
     telefono: {type: String, required: false},
     clave: {type: String, required: true}
 });
+
+export default mongoose.model("usuarios", usuariosSchema);
