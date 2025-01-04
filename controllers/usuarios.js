@@ -1,5 +1,7 @@
+import generarToken from "../helpers/autenticacion.js";
 import usuariosModel from "../models/usuarios.js";
 import bcrypt from "bcryptjs";
+
 
 class usuariosController{
 
@@ -39,7 +41,9 @@ class usuariosController{
             return res.status(400).json({message: "Clave incorrecta"});
         }
 
-        return res.status(200).json({message: "Usuario logueado"});
+        const token = generarToken(email);
+
+        return res.status(200).json({message: "Usuario logueado", token});
     }
 
 }
