@@ -7,7 +7,7 @@ route.post("/", mascotasController.createMascota);
 route.get("/", mascotasController.getAllMascotas);
 route.get("/:id", mascotasController.getOneMascota);
 route.put("/:id", validarToken, mascotasController.updateMascota);
-route.delete("/:id", mascotasController.deleteMascota);
+route.delete("/:id", validarToken, mascotasController.deleteMascota);
 
 export default route;
 

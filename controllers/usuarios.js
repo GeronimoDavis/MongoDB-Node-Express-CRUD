@@ -46,6 +46,25 @@ class usuariosController{
         return res.status(200).json({message: "Usuario logueado", token});
     }
 
+    async getAllUsuarios(req, res){
+        try{
+            const data = await usuariosModel.getAllUsuarios();
+            res.status(200).json(data);
+        }catch(e){
+           res.status(500).send(e);
+        }
+    }
+
+    async getOneUsuarios(req, res){
+        try{
+            const { email } = req.params;
+            const data = await usuariosModel.getOne({email});
+            res.status(200).json(data);
+        }catch(e){
+           res.status(500).send(e);
+        }
+    }
+
 }
 
 export default new usuariosController();
