@@ -1,4 +1,4 @@
-import generarToken from "../helpers/autenticacion.js";
+import {generarToken} from "../helpers/autenticacion.js";
 import usuariosModel from "../models/usuarios.js";
 import bcrypt from "bcryptjs";
 
